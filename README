@@ -1,0 +1,34 @@
+# Super hero squad maker!
+
+this task, The Superhero Squad Maker. Your mission is to build the ultimate
+superhero squad using the Marvel API for data.
+
+### Time spent => ~6 hours
+### Mini API: 21 - Android 5
+### Language => Kotlin
+
+# Task
+ - [x] Root view with hero list
+ - [x] Hero detail view
+ - [x] Squad list with hero list
+
+I've also added some unit test such as any feature I would have been done, but of course it's missing multiple tests
+
+Except the view (Fragment & Activity) all layers of the architecture should be able to tested.
+
+# Architecture
+
+Followed the principale of the clean architecture [https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+with the MVVM pattern for the presentation layer.
+
+How its works =>
+- The view call the ViewController (take the input of the view) which call the UseCase(handle business logic) which call the Repository (handle the data) which call the different services such as a database/cache or a webservice.
+- All the process starting from the Usecase is done in background when the result is returned in the main thread
+
+# Possible improvement
+- More UT
+- Multi module gradle
+- The navigation is done in each view however for better clarity we could add a Router abstraction where all the navigation is done and this router would be called by a controller or presenter. In instance if we want to switch to navigation component, the process would be easier
+- Pagination could be added
+
+

@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+
+    defaultConfig {
+        applicationId "com.superherosquadmaker"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField("String", "MARVEL_PRIVATE", '"6d3931094349a867743a86d6634bb307a5832b75"')
+        buildConfigField("String", "MARVEL_PUBLIC", '"1f40deb97b247198379010e1ad3eef3c"')
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation commonDependencies.kotlin
+    implementation commonDependencies.kotlinCoroutines
+    implementation commonDependencies.androidKTX
+    implementation uiDependencies.appCompat
+    implementation uiDependencies.constraintLayout
+    implementation uiDependencies.coil
+    implementation commonDependencies.threetenabp
+    implementation uiDependencies.recyclerview
+    implementation uiDependencies.materialDesign
+
+    implementation commonDependencies.timber
+
+    implementation commonDependencies.lifecycleViewModel
+
+    //okHttpLogging
+    api serviceDependencies.okhttpLogging
+
+    //Retrofit
+    api serviceDependencies.retrofit
+    implementation serviceDependencies.gson
+
+    //Room
+    implementation serviceDependencies.roomRuntime
+    kapt serviceDependencies.roomCompiler
+
+    //Dagger
+    kapt commonDependencies.daggerCompiler
+    implementation commonDependencies.dagger
+    kapt commonDependencies.daggerProcessor
+    implementation commonDependencies.daggerAndroid
+    implementation commonDependencies.daggerSupport
+
+
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.kotlinTest
+    testImplementation testDependencies.mockitoKotlin
+}

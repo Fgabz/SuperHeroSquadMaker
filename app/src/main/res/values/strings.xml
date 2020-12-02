@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SuperHeroSquadmaker</string>
+
+    <string name="loginSuccessMessage">Succeed to log</string>
+    <string name="loginFailureMessage">Failed to log</string>
+
+    <string name="authTokenFailure">Failed to retrieve auth token</string>
+
+    <string name="stars">Stars</string>
+    <string name="watcherTitle">How many people are watching?</string>
+    <string name="forkTitle">Times forked</string>
+
+    <string name="issueTitle">Is there a lot issues here?</string>
+    <string name="charTitle">Issues over the year per week</string>
+
+    <string name="hireToSquad">💪 Hire to squad</string>
+    <string name="fireFromSquad">🔥 Fire from squad</string>
+    <string name="heroName">Hero name</string>
+    <string name="mySquad">My Squad</string>
+    <string name="removeHeroFromSquadText">Let\'s remove this hero from the squad</string>
+    <string name="globalCancel">Cancel</string>
+
+</resources>

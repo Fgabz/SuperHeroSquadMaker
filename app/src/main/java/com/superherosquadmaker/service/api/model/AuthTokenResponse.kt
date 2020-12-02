@@ -1,0 +1,12 @@
+package com.superherosquadmaker.service.api.model
+
+import com.google.gson.annotations.SerializedName
+
+data class AuthTokenResponse(
+    @field:SerializedName("access_token")
+    val accessToken: String,
+    @field:SerializedName("scope")
+    val scope: String,
+    @field:SerializedName("token_type")
+    val tokenType: String
+)

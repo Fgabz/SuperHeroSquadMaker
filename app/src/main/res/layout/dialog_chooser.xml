@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootAlertDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/alert_background_light"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/chooserHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/chooserTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AlertDialogTextTitleStyle"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/chooserMessage"
+                android:layout_width="match_parent"
+                android:alpha="0.5"
+                android:layout_height="wrap_content"
+                style="@style/AlertDialogTextDescriptionStyle"
+                tools:text="This is a message" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/actionsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/divider_stroke"
+                android:orientation="vertical"
+                android:showDividers="middle"/>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/negativeButton"
+        style="@style/AlertDialogTextCancelStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Cancel" />
+</LinearLayout>
